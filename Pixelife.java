@@ -17,7 +17,7 @@ public class Pixelife extends JPanel
 {
 	private BufferedImage canvas;
 	private static PixGrid myGrid;
-	//private Spawner line_spawner;
+	private Spawner line_spawner;
 	private Spawner spawner;
 	private int width;
 	private int height;
@@ -35,9 +35,10 @@ public class Pixelife extends JPanel
 		height = h;
 
 		myGrid = new PixGrid(w, h, n);
-		//line_spawner = new Spawner(DirectedPix.class, myGrid, 0, h/2);
+		line_spawner = new Spawner(DirectedPix.class, myGrid, 0, h/2);
 		spawner = new Spawner(PulsePix.class, myGrid);
-		spawner.spawn(10);
+		//spawner.spawn(10);
+		line_spawner.spawn(1);
 	}
 
 	public Dimension getPreferredSize()
@@ -60,8 +61,8 @@ public class Pixelife extends JPanel
 		while(true)
 		{
 			myGrid.update();
-			//line_spawner.update();
-			spawner.update();
+			line_spawner.update();
+			//spawner.update();
 
 			draw();
 
