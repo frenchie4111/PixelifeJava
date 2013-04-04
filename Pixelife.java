@@ -35,6 +35,7 @@ public class Pixelife extends JPanel
 		height = h;
 
 		myGrid = new PixGrid(w, h, n);
+		
 		line_spawner = new Spawner(DirectedPix.class, myGrid, 0, h/2);
 		spawner = new Spawner(PulsePix.class, myGrid);
 		//spawner.spawn(10);
@@ -66,14 +67,15 @@ public class Pixelife extends JPanel
 
 			draw();
 
-			try
-			{
-				Thread.sleep(0);
-			}
-			catch(InterruptedException e)
-			{
-				System.out.println("interrupted");
-			}
+			// Limit framerate
+			// try
+			// {
+			// 	Thread.sleep(0);
+			// }
+			// catch(InterruptedException e)
+			// {
+			// 	System.out.println("interrupted");
+			// }
 			repaint();
 		}
 	}

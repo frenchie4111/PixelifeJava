@@ -1,8 +1,17 @@
+/**
+ * Class Directed Pix
+ * Pixel only move in one direction
+ * @author Nic Manoogian <zimmoz3@verizon.net>
+ * @author Mike Lyons
+ */
 
 public class DirectedPix extends Pix
 {
 	private int direction; // (N E S W)
 
+	/**
+	 * Constructs a DirectedPix with a random direction
+	 */
 	public DirectedPix()
 	{
 		super();
@@ -20,7 +29,9 @@ public class DirectedPix extends Pix
 	}
 
 	/**
-	 * Updates this specific pix, moving it in it's direction
+	 * Updates specific Pix, moving it in it's direction using its location
+	 * @param i x location
+	 * @param j y location
 	 */
 	public void update(int i, int j)
 	{
